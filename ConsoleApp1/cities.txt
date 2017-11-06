@@ -1,0 +1,10 @@
+Halifax
+Toronto
+Montreal
+Ottawa
+Vancouver
+Quebec City
+Calgary
+Moncton
+Sydney
+Dartmouth

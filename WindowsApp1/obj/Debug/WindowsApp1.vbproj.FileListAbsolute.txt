@@ -1,0 +1,16 @@
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\bin\Debug\EntityFramework.dll
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\bin\Debug\EntityFramework.xml
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\obj\Debug\WindowsApp1.vbprojResolveAssemblyReference.cache
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\obj\Debug\WindowsApp1.ContactForm.resources
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\obj\Debug\WindowsApp1.vbproj.GenerateResource.Cache
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CoreCompileInputs.cache
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\Carlo\Source\Repos\src5\WindowsApp1\obj\Debug\WindowsApp1.pdb
