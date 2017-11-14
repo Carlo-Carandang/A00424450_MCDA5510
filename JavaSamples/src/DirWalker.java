@@ -22,7 +22,7 @@ public class DirWalker {
 
     public static void main(String[] args) {
     	DirWalker fw = new DirWalker();
-        fw.walk("c:\\" );
+        fw.walk("/Users/carlocarandang/git/a00424450_mcda5510/JavaSamples/Sample Data" );
     }
 
 }

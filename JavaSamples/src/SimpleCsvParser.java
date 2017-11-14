@@ -11,7 +11,7 @@ public class SimpleCsvParser {
 
 		Reader in;
 		try {
-			in = new FileReader("/Users/dpenny/Desktop/Assignment1/sampleFile.csv");
+			in = new FileReader("/Users/carlocarandang/git/a00424450_mcda5510/JavaSamples/sampleFile.csv");
 			Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
 			for (CSVRecord record : records) {
 			    String id = record.get(0);

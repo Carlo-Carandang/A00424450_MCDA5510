@@ -4,7 +4,7 @@ public class SimpleFileReader {
 	public static void main(String[] args) {
 
 		// The name of the file to open.
-		String fileName = "temp.txt";
+		String fileName = "/Users/carlocarandang/git/a00424450_mcda5510/JavaSamples/README.txt";
 
 		// This will reference one line at a time
 		String line = null;

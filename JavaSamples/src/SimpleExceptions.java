@@ -8,7 +8,7 @@ public class SimpleExceptions {
 
 		FileReader fr = null;
 		try {
-			File file = new File("file.txt");
+			File file = new File("/Users/carlocarandang/git/a00424450_mcda5510/JavaSamples/README.txt");
 			fr = new FileReader(file);
 			char[] a = new char[50];
 			fr.read(a); // reads the content to the array
