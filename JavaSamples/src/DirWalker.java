@@ -14,7 +14,14 @@ public class DirWalker {
                 walk( f.getAbsolutePath() );
                 System.out.println( "Dir:" + f.getAbsoluteFile() );
             }
-            else {
+            else
+            {	
+            		String fileName = f.getName();
+            		int ln = fileName.length();
+            		if(fileName.substring(ln-3, ln).compareTo("csv") == 0)
+            		{
+            			DirWalker.csvParser(f.getAbsolutePath())
+            		}
                 System.out.println( "File:" + f.getAbsoluteFile() );
             }
         }
