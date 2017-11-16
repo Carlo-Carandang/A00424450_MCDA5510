@@ -20,7 +20,7 @@ public class DirWalker {
             		int ln = fileName.length();
             		if(fileName.substring(ln-3, ln).compareTo("csv") == 0)
             		{
-            			DirWalker.csvParser(f.getAbsolutePath())
+            			DirWalker.SimpleCsvParser(f.getAbsolutePath())
             		}
                 System.out.println( "File:" + f.getAbsoluteFile() );
             }

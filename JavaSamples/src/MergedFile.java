@@ -1,12 +1,10 @@
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.logging.FileHandler;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 import org.apache.commons.csv.CSVFormat;
@@ -14,7 +12,7 @@ import org.apache.commons.csv.CSVRecord;
 
 public class MergedFile
 {
-	
+	static ArrayList<String> arr = new ArrayList<String>();
     public static void walk( String path )
     {
     	File root = new File( path );
@@ -63,8 +61,7 @@ public class MergedFile
     			    			row = row + ",";
     			    		}
     			    }
-    			    Object arr;
-					((Object) arr).add(row);
+				arr.add(row);
     			}			
     			
     		} 
@@ -95,7 +92,7 @@ public class MergedFile
 		}
     		// read times
 		final long startTimeRead = System.currentTimeMillis();
-		MergedFile.walk("./Sample Data/");
+		MergedFile.walk("/Users/carlocarandang/git/a00424450_mcda5510/JavaSamples/Sample Data");
 		final long endTimeRead = System.currentTimeMillis();
 		System.out.println("Total execution time to read: " + (endTimeRead - startTimeRead) + " ms");
 		
@@ -103,7 +100,7 @@ public class MergedFile
 		final long startTimeWrite = System.currentTimeMillis();
 		try
 		{
-			fileWriter = FileWriter("records.csv");
+			fileWriter = new FileWriter("records.csv");
 			fileWriter.append(Header);
 			fileWriter.append("\n");
 			CSVRecord arr = null;
@@ -113,7 +110,7 @@ public class MergedFile
 				fileWriter.append("\n");
 			}
 		}
-		catch(Exception e)
+		catch(IOException e)
 		{
 			e.printStackTrace();
 		}
@@ -131,10 +128,5 @@ public class MergedFile
 		}
 		final long endTimeWrite = System.currentTimeMillis();
 		System.out.println("Total execution time to write: " + (endTimeWrite - startTimeWrite) + " ms");
-	}
-
-	private static FileWriter FileWriter(String string) {
-		// TODO Auto-generated method stub
-		return null;
 	}	
 }
