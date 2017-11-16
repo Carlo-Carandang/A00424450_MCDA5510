@@ -12,18 +12,19 @@ import org.apache.commons.csv.CSVRecord;
 
 public class MergedFile
 {
-	static ArrayList<String> arr = new ArrayList<String>();
-    public static void walk( String path )
+	
+	// directory walker
+    public static void walk(String path)
     {
-    	File root = new File( path );
+    	File root = new File(path);
         File[] list = root.listFiles();
         if (list == null) return;
-        for ( File f : list )
+        for (File f : list)
         {
-            if ( f.isDirectory() )
+            if (f.isDirectory())
             {
-                walk( f.getAbsolutePath() );
-                System.out.println( "Dir:" + f.getAbsoluteFile() );
+                walk(f.getAbsolutePath());
+                System.out.println("Dir:" + f.getAbsoluteFile());
             }
             else
             {	
@@ -33,12 +34,14 @@ public class MergedFile
             		{
             			MergedFile.SimpleCsvParser(f.getAbsolutePath());
             		}
-                System.out.println( "File:" + f.getAbsoluteFile() );
+                System.out.println("File:" + f.getAbsoluteFile());
             }
         }
     }
     
-    public static void SimpleCsvParser( String path )
+    // csv parser
+    static ArrayList<String> arr = new ArrayList<String>();
+    public static void SimpleCsvParser(String path)
     {
     		Reader in;
     		try
@@ -65,28 +68,27 @@ public class MergedFile
     			}			
     			
     		} 
-    		catch ( IOException e)
+    		catch (IOException e)
     		{
     			e.printStackTrace();    
 		}
     }
     
+    // logger
     static Logger logger = Logger.getLogger("MyLog");
-    
-    @SuppressWarnings("null")
-	public static void main(String[] args)
+    public static void main(String[] args)
     {
     		final String Header = "First Name,Last Name,Street Number,Street,City,Province,Postal Code,Country,Phone Number,email Address";
 		FileWriter fileWriter = null;
     		try
 		{
 			// This block configure the logger with handler and formatter
-			FileHandler fh = new FileHandler("./MyLogFile.log");
+			FileHandler fh = new FileHandler("MyLogFile.log");
 			logger.addHandler(fh);
 			SimpleFormatter formatter = new SimpleFormatter();
 			fh.setFormatter(formatter);
 		}
-    		catch ( IOException e)
+    		catch (IOException e)
     		{
     			e.printStackTrace();    
 		}
@@ -95,7 +97,6 @@ public class MergedFile
 		MergedFile.walk("/Users/carlocarandang/git/a00424450_mcda5510/JavaSamples/Sample Data");
 		final long endTimeRead = System.currentTimeMillis();
 		System.out.println("Total execution time to read: " + (endTimeRead - startTimeRead) + " ms");
-		
 		// write files and write times
 		final long startTimeWrite = System.currentTimeMillis();
 		try
