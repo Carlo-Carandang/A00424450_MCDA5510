@@ -103,7 +103,6 @@ public class MergedFile
 			fileWriter = new FileWriter("records.csv");
 			fileWriter.append(Header);
 			fileWriter.append("\n");
-			CSVRecord arr = null;
 			for (int i = 0; i < arr.size() ; i++)
 			{
 				fileWriter.append(arr.get(i));
