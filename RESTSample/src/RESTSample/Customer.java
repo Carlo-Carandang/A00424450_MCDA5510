@@ -6,6 +6,10 @@ public class Customer {
 	private int id;
 	private String firstName;
 	
+	public Customer( ) {
+
+	}	
+	
 	public Customer( int id, String fName) {
 		this.id=id;
 		this.firstName = fName;

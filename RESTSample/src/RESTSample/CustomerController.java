@@ -18,9 +18,10 @@ public class CustomerController {
     // URI:
     // /contextPath/servletPath/Customers
     @GET
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+    @Produces({ MediaType.APPLICATION_JSON})
     public List<Customer> getEmployees_JSON() {
-        List<Customer> listOfCustomers = CustomerDAO.getAllCustomers();
+    	CustomerDAO dao = new JDBCCustomerDAO();
+        List<Customer> listOfCustomers = dao.getAllCustomers();
         return listOfCustomers;
     }
  
@@ -30,15 +31,19 @@ public class CustomerController {
     @Path("/{id}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public Customer getCustomer(@PathParam("id") int id) {
-        return CustomerDAO.getCustomer(id);
+    	CustomerDAO dao = new InMemoryCustomerDAO();
+        return dao.getCustomer(id);
     }
  
     // URI:
     // /contextPath/servletPath/Customers
     @POST
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    public Customer addCustomer(Customer cust) {
-        return CustomerDAO.addCustomer(cust);
+    public List<Customer> addCustomer(Customer cust) {
+    	CustomerDAO dao = new JDBCCustomerDAO();
+    	dao.addCustomer(cust);
+    	List<Customer> listOfCustomers = dao.getAllCustomers();
+    	return listOfCustomers;
     }
  
     // URI:
@@ -46,14 +51,16 @@ public class CustomerController {
     @PUT
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public Customer updateCustomer(Customer cust) {
-        return CustomerDAO.updateCustomer(cust);
+    	CustomerDAO dao = new InMemoryCustomerDAO();
+        return dao.updateCustomer(cust);
     }
  
     @DELETE
     @Path("/{id}")
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     public void deleteEmployee(@PathParam("id") int id) {
-    	CustomerDAO.deleteCustomer(id);
+    	CustomerDAO dao = new InMemoryCustomerDAO();
+    	dao.deleteCustomer(id);
     }	
 	
 	
